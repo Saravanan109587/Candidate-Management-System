@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SANGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SANG.dbo.Kmit_Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Kmit_Admin">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="EmailId" />
+            <PropertyRef Name="IsActive" />
+            <PropertyRef Name="updtaeDate" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsActive" Type="nchar" MaxLength="1" Nullable="false" />
+          <Property Name="updtaeDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="kmit_CandidateDetail">
+          <Key>
+            <PropertyRef Name="EmailId" />
+          </Key>
+          <Property Name="CandidateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DateofInterview" Type="datetime" Nullable="false" />
+          <Property Name="DOB" Type="datetime" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="EmailId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNo" Type="varchar" MaxLength="20" />
+          <Property Name="Hometown" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Experience" Type="int" />
+          <Property Name="CurrentCTC" Type="int" />
+          <Property Name="ExpectedCTC" Type="int" />
+          <Property Name="NoticePeriod" Type="int" />
+          <Property Name="Interviewer" Type="varchar" MaxLength="100" />
+          <Property Name="CommentsfromInterviewer" Type="varchar" MaxLength="300" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateId" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="30" />
+          <Property Name="CommentsfromHR" Type="varchar" MaxLength="100" />
+          <Property Name="LastName" Type="varchar" MaxLength="30" />
+          <Property Name="Department" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfPhoneIntervbiew" Type="datetime" />
+          <Property Name="ReferedBy" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="kmit_Departments">
+          <Key>
+            <PropertyRef Name="departmentId" />
+          </Key>
+          <Property Name="departmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="kmit_UserLog">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateOfLogIn" Type="datetime" />
+        </EntityType>
+        <Function Name="sp_addcandidates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fname" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+          <Parameter Name="dateOfInterview" Type="datetime" Mode="In" />
+          <Parameter Name="DOb" Type="datetime" Mode="In" />
+          <Parameter Name="CurrentCTC" Type="int" Mode="In" />
+          <Parameter Name="ExpectedCTC" Type="int" Mode="In" />
+          <Parameter Name="Experience" Type="int" Mode="In" />
+          <Parameter Name="NoticePeriod" Type="int" Mode="In" />
+          <Parameter Name="Interviewer" Type="varchar" Mode="In" />
+          <Parameter Name="CommentsfromInterviewer" Type="varchar" Mode="In" />
+          <Parameter Name="Hometown" Type="varchar" Mode="In" />
+          <Parameter Name="updtaeId" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="CommentsFRomHr" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+          <Parameter Name="Department" Type="varchar" Mode="In" />
+          <Parameter Name="dateOfPhoneInterview" Type="datetime" Mode="In" />
+          <Parameter Name="ReferedBy" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_GetAllDepartments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_GetValidAdmin2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_SerarchCandidateDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="phoneNumber" Type="varchar" Mode="In" />
+          <Parameter Name="department" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+          <Parameter Name="interviewer" Type="varchar" Mode="In" />
+          <Parameter Name="referedBy" Type="varchar" Mode="In" />
+          <Parameter Name="hometown" Type="varchar" Mode="In" />
+          <Parameter Name="currentCTC" Type="int" Mode="In" />
+          <Parameter Name="ExpecCTC" Type="int" Mode="In" />
+          <Parameter Name="DateOfInterview" Type="varchar" Mode="In" />
+          <Parameter Name="dateofPhoneinterview" Type="varchar" Mode="In" />
+          <Parameter Name="noticeperiod" Type="int" Mode="In" />
+          <Parameter Name="experience" Type="int" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_SerarchCandidateDetails2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="name" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateCandidate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fname" Type="varchar" Mode="In" />
+          <Parameter Name="email" Type="varchar" Mode="In" />
+          <Parameter Name="phone" Type="varchar" Mode="In" />
+          <Parameter Name="dateOfInterview" Type="datetime" Mode="In" />
+          <Parameter Name="DOb" Type="datetime" Mode="In" />
+          <Parameter Name="CurrentCTC" Type="int" Mode="In" />
+          <Parameter Name="ExpectedCTC" Type="int" Mode="In" />
+          <Parameter Name="Experience" Type="int" Mode="In" />
+          <Parameter Name="NoticePeriod" Type="int" Mode="In" />
+          <Parameter Name="Interviewer" Type="varchar" Mode="In" />
+          <Parameter Name="CommentsfromInterviewer" Type="varchar" Mode="In" />
+          <Parameter Name="Hometown" Type="varchar" Mode="In" />
+          <Parameter Name="updtaeId" Type="varchar" Mode="In" />
+          <Parameter Name="LastName" Type="varchar" Mode="In" />
+          <Parameter Name="CommentsFRomHr" Type="varchar" Mode="In" />
+          <Parameter Name="status" Type="varchar" Mode="In" />
+          <Parameter Name="Department" Type="varchar" Mode="In" />
+          <Parameter Name="dateOfPhoneInterview" Type="datetime" Mode="In" />
+          <Parameter Name="ReferedBy" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_ValidateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="userName" Type="varchar" Mode="In" />
+          <Parameter Name="Email" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="SANGModelStoreContainer">
+          <EntitySet Name="kmit_CandidateDetail" EntityType="Self.kmit_CandidateDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kmit_Departments" EntityType="Self.kmit_Departments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kmit_UserLog" EntityType="Self.kmit_UserLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kmit_Admin" EntityType="Self.Kmit_Admin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Kmit_Admin].[UserName] AS [UserName], 
+    [Kmit_Admin].[EmailId] AS [EmailId], 
+    [Kmit_Admin].[IsActive] AS [IsActive], 
+    [Kmit_Admin].[updtaeDate] AS [updtaeDate]
+    FROM [dbo].[Kmit_Admin] AS [Kmit_Admin]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SANGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="kmit_CandidateDetail">
+          <Key>
+            <PropertyRef Name="EmailId" />
+          </Key>
+          <Property Name="CandidateId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateofInterview" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DOB" Type="DateTime" Precision="3" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PhoneNo" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Hometown" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Experience" Type="Int32" />
+          <Property Name="CurrentCTC" Type="Int32" />
+          <Property Name="ExpectedCTC" Type="Int32" />
+          <Property Name="NoticePeriod" Type="Int32" />
+          <Property Name="Interviewer" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CommentsfromInterviewer" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateId" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CommentsfromHR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfPhoneIntervbiew" Type="DateTime" Precision="3" />
+          <Property Name="ReferedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="kmit_Departments">
+          <Key>
+            <PropertyRef Name="departmentId" />
+          </Key>
+          <Property Name="departmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="kmit_UserLog">
+          <Key>
+            <PropertyRef Name="Email" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOfLogIn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Kmit_Admin">
+          <Key>
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="EmailId" />
+            <PropertyRef Name="IsActive" />
+            <PropertyRef Name="updtaeDate" />
+          </Key>
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="IsActive" Type="String" MaxLength="1" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="updtaeDate" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="SANGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="kmit_CandidateDetail" EntityType="Self.kmit_CandidateDetail" />
+          <EntitySet Name="kmit_Departments" EntityType="Self.kmit_Departments" />
+          <EntitySet Name="kmit_UserLog" EntityType="Self.kmit_UserLog" />
+          <EntitySet Name="Kmit_Admin" EntityType="Self.Kmit_Admin" />
+          <FunctionImport Name="sp_addcandidates" ReturnType="Collection(String)">
+            <Parameter Name="fname" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="dateOfInterview" Mode="In" Type="DateTime" />
+            <Parameter Name="DOb" Mode="In" Type="DateTime" />
+            <Parameter Name="CurrentCTC" Mode="In" Type="Int32" />
+            <Parameter Name="ExpectedCTC" Mode="In" Type="Int32" />
+            <Parameter Name="Experience" Mode="In" Type="Int32" />
+            <Parameter Name="NoticePeriod" Mode="In" Type="Int32" />
+            <Parameter Name="Interviewer" Mode="In" Type="String" />
+            <Parameter Name="CommentsfromInterviewer" Mode="In" Type="String" />
+            <Parameter Name="Hometown" Mode="In" Type="String" />
+            <Parameter Name="updtaeId" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="CommentsFRomHr" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="Department" Mode="In" Type="String" />
+            <Parameter Name="dateOfPhoneInterview" Mode="In" Type="DateTime" />
+            <Parameter Name="ReferedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_GetAllDepartments" ReturnType="Collection(String)" />
+          <FunctionImport Name="sp_GetValidAdmin2" ReturnType="Collection(SANGModel.sp_GetValidAdmin2_Result)">
+          <Parameter Name="name" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_SerarchCandidateDetails2" ReturnType="Collection(SANGModel.sp_SerarchCandidateDetails2_Result)">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_UpdateCandidate">
+            <Parameter Name="fname" Mode="In" Type="String" />
+            <Parameter Name="email" Mode="In" Type="String" />
+            <Parameter Name="phone" Mode="In" Type="String" />
+            <Parameter Name="dateOfInterview" Mode="In" Type="DateTime" />
+            <Parameter Name="DOb" Mode="In" Type="DateTime" />
+            <Parameter Name="CurrentCTC" Mode="In" Type="Int32" />
+            <Parameter Name="ExpectedCTC" Mode="In" Type="Int32" />
+            <Parameter Name="Experience" Mode="In" Type="Int32" />
+            <Parameter Name="NoticePeriod" Mode="In" Type="Int32" />
+            <Parameter Name="Interviewer" Mode="In" Type="String" />
+            <Parameter Name="CommentsfromInterviewer" Mode="In" Type="String" />
+            <Parameter Name="Hometown" Mode="In" Type="String" />
+            <Parameter Name="updtaeId" Mode="In" Type="String" />
+            <Parameter Name="LastName" Mode="In" Type="String" />
+            <Parameter Name="CommentsFRomHr" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="Department" Mode="In" Type="String" />
+            <Parameter Name="dateOfPhoneInterview" Mode="In" Type="DateTime" />
+            <Parameter Name="ReferedBy" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_ValidateUser" ReturnType="Collection(String)">
+            <Parameter Name="userName" Mode="In" Type="String" />
+            <Parameter Name="Email" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_SerarchCandidateDetails" ReturnType="Collection(SANGModel.sp_SerarchCandidateDetails_Result)">
+            <Parameter Name="name" Mode="In" Type="String" />
+            <Parameter Name="phoneNumber" Mode="In" Type="String" />
+            <Parameter Name="department" Mode="In" Type="String" />
+            <Parameter Name="status" Mode="In" Type="String" />
+            <Parameter Name="interviewer" Mode="In" Type="String" />
+            <Parameter Name="referedBy" Mode="In" Type="String" />
+            <Parameter Name="hometown" Mode="In" Type="String" />
+            <Parameter Name="currentCTC" Mode="In" Type="Int32" />
+            <Parameter Name="ExpecCTC" Mode="In" Type="Int32" />
+            <Parameter Name="DateOfInterview" Mode="In" Type="String" />
+            <Parameter Name="dateofPhoneinterview" Mode="In" Type="String" />
+            <Parameter Name="noticeperiod" Mode="In" Type="Int32" />
+            <Parameter Name="experience" Mode="In" Type="Int32" />
+            <Parameter Name="email" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_GetValidAdmin2_Result">
+          <Property Type="String" Name="Username" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="EmailId" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_SerarchCandidateDetails2_Result">
+          <Property Type="Int32" Name="CandidateId" Nullable="false" />
+          <Property Type="String" Name="DateofInterview" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="DOB" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EmailId" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="PhoneNo" Nullable="false" />
+          <Property Type="String" Name="Hometown" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Experience" Nullable="true" />
+          <Property Type="Int32" Name="CurrentCTC" Nullable="true" />
+          <Property Type="Int32" Name="ExpectedCTC" Nullable="true" />
+          <Property Type="Int32" Name="NoticePeriod" Nullable="true" />
+          <Property Type="String" Name="Interviewer" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CommentsfromInterviewer" Nullable="true" MaxLength="300" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="UpdateId" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="CommentsfromHR" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DateOfPhoneIntervbiew" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ReferedBy" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_SerarchCandidateDetails_Result">
+          <Property Type="Int32" Name="CandidateId" Nullable="false" />
+          <Property Type="String" Name="DateofInterview" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="DOB" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="EmailId" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Hometown" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Experience" Nullable="true" />
+          <Property Type="Int32" Name="CurrentCTC" Nullable="true" />
+          <Property Type="Int32" Name="ExpectedCTC" Nullable="true" />
+          <Property Type="Int32" Name="NoticePeriod" Nullable="true" />
+          <Property Type="String" Name="Interviewer" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="CommentsfromInterviewer" Nullable="true" MaxLength="300" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="UpdateId" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="Status" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="CommentsfromHR" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="LastName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Department" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="DateOfPhoneIntervbiew" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="ReferedBy" Nullable="true" MaxLength="50" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SANGModelStoreContainer" CdmEntityContainer="SANGEntities">
+          <EntitySetMapping Name="kmit_CandidateDetail">
+            <EntityTypeMapping TypeName="SANGModel.kmit_CandidateDetail">
+              <MappingFragment StoreEntitySet="kmit_CandidateDetail">
+                <ScalarProperty Name="ReferedBy" ColumnName="ReferedBy" />
+                <ScalarProperty Name="CandidateId" ColumnName="CandidateId" />
+                <ScalarProperty Name="DateofInterview" ColumnName="DateofInterview" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+                <ScalarProperty Name="CurrentCTC" ColumnName="CurrentCTC" />
+                <ScalarProperty Name="ExpectedCTC" ColumnName="ExpectedCTC" />
+                <ScalarProperty Name="NoticePeriod" ColumnName="NoticePeriod" />
+                <ScalarProperty Name="Interviewer" ColumnName="Interviewer" />
+                <ScalarProperty Name="CommentsfromInterviewer" ColumnName="CommentsfromInterviewer" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CommentsfromHR" ColumnName="CommentsfromHR" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="DateOfPhoneIntervbiew" ColumnName="DateOfPhoneIntervbiew" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kmit_Departments">
+            <EntityTypeMapping TypeName="SANGModel.kmit_Departments">
+              <MappingFragment StoreEntitySet="kmit_Departments">
+                <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kmit_UserLog">
+            <EntityTypeMapping TypeName="SANGModel.kmit_UserLog">
+              <MappingFragment StoreEntitySet="kmit_UserLog">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DateOfLogIn" ColumnName="DateOfLogIn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kmit_Admin">
+            <EntityTypeMapping TypeName="SANGModel.Kmit_Admin">
+              <MappingFragment StoreEntitySet="Kmit_Admin">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="updtaeDate" ColumnName="updtaeDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_addcandidates" FunctionName="SANGModel.Store.sp_addcandidates" />
+          <FunctionImportMapping FunctionImportName="sp_GetAllDepartments" FunctionName="SANGModel.Store.sp_GetAllDepartments" />
+          <FunctionImportMapping FunctionImportName="sp_GetValidAdmin2" FunctionName="SANGModel.Store.sp_GetValidAdmin2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SANGModel.sp_GetValidAdmin2_Result">
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_SerarchCandidateDetails2" FunctionName="SANGModel.Store.sp_SerarchCandidateDetails2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SANGModel.sp_SerarchCandidateDetails2_Result">
+                <ScalarProperty Name="CandidateId" ColumnName="CandidateId" />
+                <ScalarProperty Name="DateofInterview" ColumnName="DateofInterview" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+                <ScalarProperty Name="CurrentCTC" ColumnName="CurrentCTC" />
+                <ScalarProperty Name="ExpectedCTC" ColumnName="ExpectedCTC" />
+                <ScalarProperty Name="NoticePeriod" ColumnName="NoticePeriod" />
+                <ScalarProperty Name="Interviewer" ColumnName="Interviewer" />
+                <ScalarProperty Name="CommentsfromInterviewer" ColumnName="CommentsfromInterviewer" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CommentsfromHR" ColumnName="CommentsfromHR" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="DateOfPhoneIntervbiew" ColumnName="DateOfPhoneIntervbiew" />
+                <ScalarProperty Name="ReferedBy" ColumnName="ReferedBy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_UpdateCandidate" FunctionName="SANGModel.Store.sp_UpdateCandidate" />
+          <FunctionImportMapping FunctionImportName="sp_ValidateUser" FunctionName="SANGModel.Store.sp_ValidateUser" />
+          <FunctionImportMapping FunctionImportName="sp_SerarchCandidateDetails" FunctionName="SANGModel.Store.sp_SerarchCandidateDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SANGModel.sp_SerarchCandidateDetails_Result">
+                <ScalarProperty Name="CandidateId" ColumnName="CandidateId" />
+                <ScalarProperty Name="DateofInterview" ColumnName="DateofInterview" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+                <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+                <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+                <ScalarProperty Name="Experience" ColumnName="Experience" />
+                <ScalarProperty Name="CurrentCTC" ColumnName="CurrentCTC" />
+                <ScalarProperty Name="ExpectedCTC" ColumnName="ExpectedCTC" />
+                <ScalarProperty Name="NoticePeriod" ColumnName="NoticePeriod" />
+                <ScalarProperty Name="Interviewer" ColumnName="Interviewer" />
+                <ScalarProperty Name="CommentsfromInterviewer" ColumnName="CommentsfromInterviewer" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CommentsfromHR" ColumnName="CommentsfromHR" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="DateOfPhoneIntervbiew" ColumnName="DateOfPhoneIntervbiew" />
+                <ScalarProperty Name="ReferedBy" ColumnName="ReferedBy" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

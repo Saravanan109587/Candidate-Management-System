@@ -1,0 +1,11 @@
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Email\bin\Release\Email.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Email\bin\Release\Email.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Email\obj\Release\Email.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Email\obj\Release\Email.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Email\obj\Release\Email.csprojResolveAssemblyReference.cache
+D:\OProjects\Project_Sanga\CMS\Email\bin\Release\Email.dll
+D:\OProjects\Project_Sanga\CMS\Email\bin\Release\Email.pdb
+D:\OProjects\Project_Sanga\CMS\Email\obj\Release\Email.csprojAssemblyReference.cache
+D:\OProjects\Project_Sanga\CMS\Email\obj\Release\Email.csproj.CoreCompileInputs.cache
+D:\OProjects\Project_Sanga\CMS\Email\obj\Release\Email.dll
+D:\OProjects\Project_Sanga\CMS\Email\obj\Release\Email.pdb

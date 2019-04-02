@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SANGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'SANG.dbo.Kmit_Admin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Kmit_Admin">
+    <Key>
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="EmailId" />
+      <PropertyRef Name="IsActive" />
+      <PropertyRef Name="updtaeDate" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IsActive" Type="nchar" MaxLength="1" Nullable="false" />
+    <Property Name="updtaeDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="kmit_CandidateDetail">
+    <Key>
+      <PropertyRef Name="EmailId" />
+    </Key>
+    <Property Name="CandidateId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateofInterview" Type="datetime" Nullable="false" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="20" />
+    <Property Name="Hometown" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Experience" Type="int" />
+    <Property Name="CurrentCTC" Type="int" />
+    <Property Name="ExpectedCTC" Type="int" />
+    <Property Name="NoticePeriod" Type="int" />
+    <Property Name="Interviewer" Type="varchar" MaxLength="100" />
+    <Property Name="CommentsfromInterviewer" Type="varchar" MaxLength="300" />
+    <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+    <Property Name="UpdateId" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="30" />
+    <Property Name="CommentsfromHR" Type="varchar" MaxLength="100" />
+    <Property Name="LastName" Type="varchar" MaxLength="30" />
+    <Property Name="Department" Type="varchar" MaxLength="50" />
+    <Property Name="DateOfPhoneIntervbiew" Type="datetime" />
+    <Property Name="ReferedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="kmit_Departments">
+    <Key>
+      <PropertyRef Name="departmentId" />
+    </Key>
+    <Property Name="departmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="kmit_UserLog">
+    <Key>
+      <PropertyRef Name="Email" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateOfLogIn" Type="datetime" />
+  </EntityType>
+  <Function Name="sp_addcandidates" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fname" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="dateOfInterview" Type="datetime" Mode="In" />
+    <Parameter Name="DOb" Type="datetime" Mode="In" />
+    <Parameter Name="CurrentCTC" Type="int" Mode="In" />
+    <Parameter Name="ExpectedCTC" Type="int" Mode="In" />
+    <Parameter Name="Experience" Type="int" Mode="In" />
+    <Parameter Name="NoticePeriod" Type="int" Mode="In" />
+    <Parameter Name="Interviewer" Type="varchar" Mode="In" />
+    <Parameter Name="CommentsfromInterviewer" Type="varchar" Mode="In" />
+    <Parameter Name="Hometown" Type="varchar" Mode="In" />
+    <Parameter Name="updtaeId" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="CommentsFRomHr" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="Department" Type="varchar" Mode="In" />
+    <Parameter Name="dateOfPhoneInterview" Type="datetime" Mode="In" />
+    <Parameter Name="ReferedBy" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_GetAllDepartments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_GetValidAdmin2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SerarchCandidateDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="phoneNumber" Type="varchar" Mode="In" />
+    <Parameter Name="department" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="interviewer" Type="varchar" Mode="In" />
+    <Parameter Name="referedBy" Type="varchar" Mode="In" />
+    <Parameter Name="hometown" Type="varchar" Mode="In" />
+    <Parameter Name="currentCTC" Type="int" Mode="In" />
+    <Parameter Name="ExpecCTC" Type="int" Mode="In" />
+    <Parameter Name="DateOfInterview" Type="varchar" Mode="In" />
+    <Parameter Name="dateofPhoneinterview" Type="varchar" Mode="In" />
+    <Parameter Name="noticeperiod" Type="int" Mode="In" />
+    <Parameter Name="experience" Type="int" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SerarchCandidateDetails2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateCandidate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="fname" Type="varchar" Mode="In" />
+    <Parameter Name="email" Type="varchar" Mode="In" />
+    <Parameter Name="phone" Type="varchar" Mode="In" />
+    <Parameter Name="dateOfInterview" Type="datetime" Mode="In" />
+    <Parameter Name="DOb" Type="datetime" Mode="In" />
+    <Parameter Name="CurrentCTC" Type="int" Mode="In" />
+    <Parameter Name="ExpectedCTC" Type="int" Mode="In" />
+    <Parameter Name="Experience" Type="int" Mode="In" />
+    <Parameter Name="NoticePeriod" Type="int" Mode="In" />
+    <Parameter Name="Interviewer" Type="varchar" Mode="In" />
+    <Parameter Name="CommentsfromInterviewer" Type="varchar" Mode="In" />
+    <Parameter Name="Hometown" Type="varchar" Mode="In" />
+    <Parameter Name="updtaeId" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="CommentsFRomHr" Type="varchar" Mode="In" />
+    <Parameter Name="status" Type="varchar" Mode="In" />
+    <Parameter Name="Department" Type="varchar" Mode="In" />
+    <Parameter Name="dateOfPhoneInterview" Type="datetime" Mode="In" />
+    <Parameter Name="ReferedBy" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ValidateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="SANGModelStoreContainer">
+    <EntitySet Name="kmit_CandidateDetail" EntityType="Self.kmit_CandidateDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kmit_Departments" EntityType="Self.kmit_Departments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kmit_UserLog" EntityType="Self.kmit_UserLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kmit_Admin" EntityType="Self.Kmit_Admin" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Kmit_Admin].[UserName] AS [UserName], 
+    [Kmit_Admin].[EmailId] AS [EmailId], 
+    [Kmit_Admin].[IsActive] AS [IsActive], 
+    [Kmit_Admin].[updtaeDate] AS [updtaeDate]
+    FROM [dbo].[Kmit_Admin] AS [Kmit_Admin]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

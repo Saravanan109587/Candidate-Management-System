@@ -1,0 +1,11 @@
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Help\bin\Release\Help.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Help\bin\Release\Help.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Help\obj\Release\Help.csprojResolveAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Help\obj\Release\Help.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\Help\obj\Release\Help.pdb
+D:\OProjects\Project_Sanga\CMS\Help\bin\Release\Help.dll
+D:\OProjects\Project_Sanga\CMS\Help\bin\Release\Help.pdb
+D:\OProjects\Project_Sanga\CMS\Help\obj\Release\Help.csprojAssemblyReference.cache
+D:\OProjects\Project_Sanga\CMS\Help\obj\Release\Help.csproj.CoreCompileInputs.cache
+D:\OProjects\Project_Sanga\CMS\Help\obj\Release\Help.dll
+D:\OProjects\Project_Sanga\CMS\Help\obj\Release\Help.pdb

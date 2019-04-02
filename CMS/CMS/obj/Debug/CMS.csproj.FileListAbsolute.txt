@@ -1,0 +1,90 @@
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\CMS.dll.config
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\CMS.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\CMS.pdb
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\Antlr3.Runtime.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\EntityFramework.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\EntityFramework.SqlServer.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\Microsoft.Web.Infrastructure.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\Newtonsoft.Json.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Net.Http.Formatting.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Helpers.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Http.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Http.WebHost.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Mvc.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Optimization.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Razor.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.WebPages.Deployment.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.WebPages.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.WebPages.Razor.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\WebGrease.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\EntityFramework.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\EntityFramework.SqlServer.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\Newtonsoft.Json.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Net.Http.Formatting.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Helpers.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Http.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Http.WebHost.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Mvc.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Optimization.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Razor.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.WebPages.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.WebPages.Deployment.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.WebPages.Razor.xml
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\Antlr3.Runtime.pdb
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\obj\Debug\CMS.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\obj\Debug\CMS.pdb
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Cors.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Http.Cors.dll
+c:\users\admin\documents\visual studio 2013\Projects\CMS\CMS\bin\System.Web.Http.Cors.xml
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\CMS\bin\Email.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\CMS\bin\Help.dll
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\CMS\bin\Email.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\CMS\bin\Help.pdb
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\CMS\obj\Debug\CMS.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\CMS\obj\Debug\CMS.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\Visual Studio 2013\Projects\CMS\CMS\obj\Debug\CMS.csproj.CopyComplete
+D:\OProjects\Project_Sanga\CMS\CMS\bin\CMS.dll.config
+D:\OProjects\Project_Sanga\CMS\CMS\bin\CMS.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\CMS.pdb
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Antlr3.Runtime.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Email.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\EntityFramework.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\EntityFramework.SqlServer.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Help.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Microsoft.Web.Infrastructure.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Newtonsoft.Json.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Net.Http.Formatting.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Cors.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Helpers.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Http.Cors.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Http.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Http.WebHost.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Mvc.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Optimization.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Razor.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.WebPages.Deployment.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.WebPages.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.WebPages.Razor.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\WebGrease.dll
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Email.pdb
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Help.pdb
+D:\OProjects\Project_Sanga\CMS\CMS\bin\EntityFramework.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\EntityFramework.SqlServer.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Newtonsoft.Json.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Net.Http.Formatting.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Http.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Http.Cors.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Helpers.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Http.WebHost.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Mvc.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Optimization.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.Razor.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.WebPages.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.WebPages.Deployment.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\System.Web.WebPages.Razor.xml
+D:\OProjects\Project_Sanga\CMS\CMS\bin\Antlr3.Runtime.pdb
+D:\OProjects\Project_Sanga\CMS\CMS\obj\Debug\CMS.csprojAssemblyReference.cache
+D:\OProjects\Project_Sanga\CMS\CMS\obj\Debug\CMS.csproj.CoreCompileInputs.cache
+D:\OProjects\Project_Sanga\CMS\CMS\obj\Debug\CMS.csproj.CopyComplete
+D:\OProjects\Project_Sanga\CMS\CMS\obj\Debug\CMS.dll
+D:\OProjects\Project_Sanga\CMS\CMS\obj\Debug\CMS.pdb

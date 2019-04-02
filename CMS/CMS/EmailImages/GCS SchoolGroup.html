@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        span.Heading 
+        {font-size:x-large;font-weight:bold}
+        span.Address 
+        {font-size:15px;margin-left:5%;font-weight:lighter;float:Left;margin-top:12%}
+        span.Logoside 
+        {font-size:15px;margin-left:10%;font-weight:lighter;float:right;margin-top:5%}
+        span.contentdata
+        {font-size:large;font-weight:bold;font-size:22px}
+        span.tab {margin-left: 0.5em}
+        .datatable {border-collapse: collapse}
+        .datapart{margin-top:100px;margin-left:50px;}
+        .datapartVisitingdate{margin-top:250px;margin-left:50px;font-family:Arial}
+        .datapartHeading{margin-left:300px;font-size:larger;font-weight:bold;font-family:Arial}
+        .datapartHeading2{margin-left:90px;font-size:larger;font-weight:bold;font-family:Arial}
+        .tableprice {
+            padding-top: 50%;
+        }
+        .tabledata {
+            padding-top:-50%;
+        }
+
+    </style>
+</head>
+
+<body>
+   
+    <div class="container" style="font-family:Arial;font-weight:lighter">
+        <p style="align-content:center">
+            <span class="Heading">GUILFORD COUNTY SCHOOL VISIT CONFIRMATION </span>
+            <span class="Address">{{BarcodeImage}}<br /><b>Sales Transaction NO:</b>{{TransactionId}}<br />{{GroupName}}<br />{{ContactPerson}}<br />
+                {{MailingAddress}}<br />{{CityName}},{{State}}{{Zip}}<br />Ph:{{ContactPhone}}<br />{{ContactEmail}}</span>
+            <span class="Logoside">{{ClientImage}}<br />{{ClientName}}<br />{{Address1}}<br />{{Address2}}<br />{{Website}}<br />{{Phone}}</span>
+        </p>
+    </div>
+   
+    <div class="datapartVisitingdate">
+        <span ><b>VisitingDate:{{EventDate}}</b></span>
+    </div>
+       
+    <div style="font-family:Arial">
+        <p>           
+            <span class="contentdata">                
+                <table class="Datatable" border="1" style="font-weight:bold;font-size:15px;margin-left:5%;margin-bottom:5%;
+                    margin-top:10px" width="90%" align="left" cellpadding="8">
+                    <tr class="text-center">
+                        <td>Item Description</td>
+                        <td>Arrival Time</td>
+                        <td>Number of Guests</td>
+                        <td>Price</td>
+                        <td>Total</td>
+                    </tr>
+                    <tr style="height:50%">
+                        {{ItemDescription}}                        
+                    </tr>
+
+                    <tr style="margin-left:50px">
+                        <td rowspan="2"></td>  
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td >TotalTax</td>
+                        <td>{{TotalTax}}</td>                                              
+                    </tr>
+                    <tr>
+                        
+                        <td>TotalDue</td>
+                        <td>{{TotalDueAmount}}</td>
+                    </tr>
+                
+                </table>
+            </span>
+            {{Addon}}
+            {{Resource}}
+            {{Payment}} 
+        </p>       
+    </div>
+
+    <div class="datapart">
+        <p>
+            <span class="datapartHeading"><u>Before your visit:</u></span>
+        </p>
+        <p style="font-size:large;font-family:Arial">
+            Review the <b>Field Trip Procedures</b> found on our website (Visit – Groups & Field Trips – Group Visit & Field Trip Procedures).<br />
+            <br />
+            Need to <span style="color:red">REVISE</span> or <span style="color:red">CANCEL</span> your visit? Complete our online <b>Revision Request Form</b> at least one business week prior to your visit date.<br />          
+        </p>
+        <p>
+            <span class="datapartHeading"><u>2017/18 Group Price Guide:</u></span>
+        </p>
+        <p style="font-size:large;font-family:Arial">
+            Prices listed below are for general admission only. Additional pricing information can be found on our website.<br />
+            <br />
+            <b>Student/Child:</b> $0.00 <br />
+            <br />
+            <b>Teacher/Staff:</b> FREE general admission when bringing a school group.<br />
+            <u>Must</u> show a valid teacher ID during check-in.<br />
+            <br />
+                <b>Bus Driver:</b> FREE
+            <br />
+            <b>
+                Parent Chaperone:
+            </b> $12.28 ea. (tax included)<br />
+                Upon arrival, to receive the discount, chaperones must notify admissions which school they are visiting the Center with.
+         </p>
+        <p>
+            <span class="datapartHeading2"><u> The information below is for check-in purposes on the actual visit date.</u></span>
+        </p>
+        <p style="font-size:large;font-family:Arial;">
+            By signing this document, I acknowledge that the information provided is correct, and I provide authorization to the Greensboro Science Center to invoice my school/group at the above address for payment.
+        </p>
+        <p style="margin-top:5%;font-family:Arial;">
+            <b>Signature:___________________________________</b>&nbsp;&nbsp;&nbsp;&nbsp;      
+           <b>Date:_________________________________________</b>
+        </p>
+    </div>
+</body>
+</html>
+
+
+
+
+

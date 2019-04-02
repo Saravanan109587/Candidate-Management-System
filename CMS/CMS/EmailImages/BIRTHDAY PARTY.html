@@ -1,0 +1,104 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        span.Heading 
+        {font-size:x-large;font-weight:bold}
+        span.Address 
+        {font-size:15px;margin-left:5%;font-weight:lighter;float:Left;margin-top:12%}
+        span.Logoside 
+        {font-size:15px;margin-left:10%;font-weight:lighter;float:right;margin-top:5%}
+        span.contentdata
+        {font-size:large;font-weight:bold;font-size:22px}
+        span.tab {margin-left: 0.5em}
+        .datatable {border-collapse: collapse}
+        .datapart{margin-top:100px;margin-left:50px;}
+        .datapartVisitingdate{margin-top:250px;margin-left:50px;font-family:Arial}
+        .datapartHeading{margin-left:300px;font-size:larger;font-weight:bold;font-family:Arial;color:red}
+        .datapartHeading2{margin-left:90px;font-size:larger;font-weight:bold;font-family:Arial}
+        .tableprice {
+            padding-top: 50%;
+        }
+        .tabledata {
+            padding-top:-50%;
+        }
+
+    </style>
+</head>
+
+<body>
+   
+    <div class="container" style="font-family:Arial;font-weight:lighter">
+        <p style="align-content:center">
+            <span class="Heading">VISIT CONFIRMATION</span>
+            <span class="Address">{{BarcodeImage}}<br /><b>Sales Transaction NO:</b>{{TransactionId}}<br />{{GroupName}}<br />{{ContactPerson}}<br />
+                {{MailingAddress}}<br />{{CityName}},{{State}}{{Zip}}<br />Ph:{{ContactPhone}}<br />{{ContactEmail}}</span>
+            <span class="Logoside">{{ClientImage}}<br />{{ClientName}}<br />{{Address1}}<br />{{Address2}}<br />{{Website}}<br />{{Phone}}</span>
+        </p>
+    </div>
+   
+    <div class="datapartVisitingdate">
+        <span ><b>Party Date:{{EventDate}}</b></span>
+    </div>
+       
+    <div style="font-family:Arial">
+        <p>           
+            <span class="contentdata">                
+                <table class="Datatable" border="1" style="font-weight:bold;font-size:15px;margin-left:5%;margin-bottom:5%;
+                    margin-top:10px" width="90%" align="left" cellpadding="8">
+                    <tr class="text-center">
+                        <td>Item Description</td>
+                        <td>Arrival Time</td>
+                        <td>Number of Guests</td>
+                        <td>Price</td>
+                        <td>Total</td>
+                    </tr>
+                    <tr style="height:50%">
+                        {{ItemDescription}}                        
+                    </tr>
+
+                    <tr style="margin-left:50px">
+                        <td rowspan="2"></td>  
+                        <td rowspan="2"></td>
+                        <td rowspan="2"></td>
+                        <td >TotalTax</td>
+                        <td>{{TotalTax}}</td>                                              
+                    </tr>
+                    <tr>
+                        
+                        <td>TotalDue</td>
+                        <td>{{TotalDueAmount}}</td>
+                    </tr>
+                
+                </table>
+            </span>
+            {{Addon}}
+            {{Resource}}
+            {{Payment}} 
+        </p>       
+    </div>
+
+    <div class="datapart">
+        <p>
+            <span class="datapartHeading"><b>REMINDERS:</b></span>
+        </p>
+        <p style="font-size:large;font-family:Arial">
+            <ul>
+                <li>Remaining balances are due 2 business weeks prior to party date; please email birthdays@greensboroscience.org to arrange payment.</li>
+                <br />
+                <li>Prepare your guest list and submit it to birthdays@greensboroscience.org no later than 3:30 pm the Friday before your party date.</li>
+                <br />
+                <li>Event takes place rain or shine; no refunds. Refer to your “Party Planner Packet” for inclement weather policy.</li>
+                <br />
+                <li>Don’t forget to review the Party Planner PDF that is attached to your confirmation email.</li>
+            </ul>
+        </p>        
+    </div>
+</body>
+</html>
+
+
+
+
+

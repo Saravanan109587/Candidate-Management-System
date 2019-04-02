@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SANGModelStoreContainer" CdmEntityContainer="SANGEntities">
+    <EntitySetMapping Name="kmit_CandidateDetail">
+      <EntityTypeMapping TypeName="SANGModel.kmit_CandidateDetail">
+        <MappingFragment StoreEntitySet="kmit_CandidateDetail">
+          <ScalarProperty Name="ReferedBy" ColumnName="ReferedBy" />
+          <ScalarProperty Name="CandidateId" ColumnName="CandidateId" />
+          <ScalarProperty Name="DateofInterview" ColumnName="DateofInterview" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="CurrentCTC" ColumnName="CurrentCTC" />
+          <ScalarProperty Name="ExpectedCTC" ColumnName="ExpectedCTC" />
+          <ScalarProperty Name="NoticePeriod" ColumnName="NoticePeriod" />
+          <ScalarProperty Name="Interviewer" ColumnName="Interviewer" />
+          <ScalarProperty Name="CommentsfromInterviewer" ColumnName="CommentsfromInterviewer" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CommentsfromHR" ColumnName="CommentsfromHR" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="DateOfPhoneIntervbiew" ColumnName="DateOfPhoneIntervbiew" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kmit_Departments">
+      <EntityTypeMapping TypeName="SANGModel.kmit_Departments">
+        <MappingFragment StoreEntitySet="kmit_Departments">
+          <ScalarProperty Name="departmentId" ColumnName="departmentId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kmit_UserLog">
+      <EntityTypeMapping TypeName="SANGModel.kmit_UserLog">
+        <MappingFragment StoreEntitySet="kmit_UserLog">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="DateOfLogIn" ColumnName="DateOfLogIn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kmit_Admin">
+      <EntityTypeMapping TypeName="SANGModel.Kmit_Admin">
+        <MappingFragment StoreEntitySet="Kmit_Admin">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="updtaeDate" ColumnName="updtaeDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_addcandidates" FunctionName="SANGModel.Store.sp_addcandidates" />
+    <FunctionImportMapping FunctionImportName="sp_GetAllDepartments" FunctionName="SANGModel.Store.sp_GetAllDepartments" />
+    <FunctionImportMapping FunctionImportName="sp_GetValidAdmin2" FunctionName="SANGModel.Store.sp_GetValidAdmin2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SANGModel.sp_GetValidAdmin2_Result">
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_SerarchCandidateDetails2" FunctionName="SANGModel.Store.sp_SerarchCandidateDetails2">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SANGModel.sp_SerarchCandidateDetails2_Result">
+          <ScalarProperty Name="CandidateId" ColumnName="CandidateId" />
+          <ScalarProperty Name="DateofInterview" ColumnName="DateofInterview" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="CurrentCTC" ColumnName="CurrentCTC" />
+          <ScalarProperty Name="ExpectedCTC" ColumnName="ExpectedCTC" />
+          <ScalarProperty Name="NoticePeriod" ColumnName="NoticePeriod" />
+          <ScalarProperty Name="Interviewer" ColumnName="Interviewer" />
+          <ScalarProperty Name="CommentsfromInterviewer" ColumnName="CommentsfromInterviewer" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CommentsfromHR" ColumnName="CommentsfromHR" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="DateOfPhoneIntervbiew" ColumnName="DateOfPhoneIntervbiew" />
+          <ScalarProperty Name="ReferedBy" ColumnName="ReferedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_UpdateCandidate" FunctionName="SANGModel.Store.sp_UpdateCandidate" />
+    <FunctionImportMapping FunctionImportName="sp_ValidateUser" FunctionName="SANGModel.Store.sp_ValidateUser" />
+    <FunctionImportMapping FunctionImportName="sp_SerarchCandidateDetails" FunctionName="SANGModel.Store.sp_SerarchCandidateDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="SANGModel.sp_SerarchCandidateDetails_Result">
+          <ScalarProperty Name="CandidateId" ColumnName="CandidateId" />
+          <ScalarProperty Name="DateofInterview" ColumnName="DateofInterview" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Hometown" ColumnName="Hometown" />
+          <ScalarProperty Name="Experience" ColumnName="Experience" />
+          <ScalarProperty Name="CurrentCTC" ColumnName="CurrentCTC" />
+          <ScalarProperty Name="ExpectedCTC" ColumnName="ExpectedCTC" />
+          <ScalarProperty Name="NoticePeriod" ColumnName="NoticePeriod" />
+          <ScalarProperty Name="Interviewer" ColumnName="Interviewer" />
+          <ScalarProperty Name="CommentsfromInterviewer" ColumnName="CommentsfromInterviewer" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="UpdateId" ColumnName="UpdateId" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="CommentsfromHR" ColumnName="CommentsfromHR" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="DateOfPhoneIntervbiew" ColumnName="DateOfPhoneIntervbiew" />
+          <ScalarProperty Name="ReferedBy" ColumnName="ReferedBy" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
